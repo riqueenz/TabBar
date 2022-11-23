@@ -25,7 +25,6 @@ import FreeCAD as App
 from PySide import QtGui
 from PySide import QtCore
 
-
 actions = {}
 mw = Gui.getMainWindow()
 group = QtGui.QActionGroup(mw)
@@ -142,6 +141,24 @@ def onOrientationChanged(w):
         btn.show()
     else:
         btn.hide()
+        
+def translateWBName(WBName):
+    pg = App.ParamGet("User parameter:BaseApp/Preferences/General")
+    currentLanguage = pg.GetString("Language","unknown")
+    if currentLanguage == "Portuguese, Brazilian" or currentLanguage == "Portuguese":
+        if WBName == "Sketcher":
+            WBName = "Esboço"
+        if WBName == "Part Design":
+            WBName = "Recursos"
+        if WBName == "TechDraw":
+            WBName = "Detalhamento"
+        if WBName == "Spreadsheet":
+            WBName = "Tabela"
+        if WBName == "A2plus":
+            WBName = "Montagem (A2plus)"
+        if WBName == "Surface":
+            WBName = "Superfícies"
+    return WBName
 
 
 def tabs():
@@ -200,13 +217,16 @@ def tabs():
     for i in enabled:
         if i in actions:
             if p.GetString("Style") == "IconText":
-                r = w.tabBar().addTab(actions[i].icon(), actions[i].text())
+                WBName = translateWBName(actions[i].text())
+                r = w.tabBar().addTab(actions[i].icon(), WBName)
             elif p.GetString("Style") == "Text":
-                r = w.tabBar().addTab(actions[i].text())
+                WBName = translateWBName(actions[i].text())
+                r = w.tabBar().addTab(WBName)
             else:
                 r = w.tabBar().addTab(actions[i].icon(), None)
             w.tabBar().setTabData(r, i)
-            w.tabBar().setTabToolTip(r, actions[i].text())
+            WBName = translateWBName(actions[i].text())
+            w.tabBar().setTabToolTip(r, WBName)
 
     for i in range(w.count()):
         if w.tabBar().tabData(i) == active:
@@ -443,7 +463,8 @@ def prefDialog():
     for i in position:
         if i in actions:
             item = QtGui.QListWidgetItem(selector)
-            item.setText(actions[i].text())
+            WBName = translateWBName(actions[i].text())
+            item.setText(WBName)
             item.setIcon(actions[i].icon())
             item.setData(32, actions[i].data())
             if actions[i].data() in enabled:
