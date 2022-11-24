@@ -145,6 +145,7 @@ def onOrientationChanged(w):
 def translateWBName(WBName):
     pg = App.ParamGet("User parameter:BaseApp/Preferences/General")
     currentLanguage = pg.GetString("Language","unknown")
+    #print(currentLanguage)
     if currentLanguage == "Portuguese, Brazilian" or currentLanguage == "Portuguese":
         if WBName == "Sketcher":
             WBName = "Esboço"
@@ -158,6 +159,62 @@ def translateWBName(WBName):
             WBName = "Montagem (A2plus)"
         if WBName == "Surface":
             WBName = "Superfícies"
+        if WBName == "Sheet Metal":
+            WBName = "Chapas metálicas"
+        if WBName == "Gear":
+            WBName = "Engrenagens"
+    if currentLanguage == "Spanish, Argentina" or currentLanguage == "Spanish":
+        if WBName == "Sketcher":
+            WBName = "Croquis"
+        if WBName == "Part Design":
+            WBName = "Operaciones"
+        if WBName == "TechDraw":
+            WBName = "Dibujo"
+        if WBName == "Spreadsheet":
+            WBName = "Hoja de cálculo"
+        if WBName == "A2plus":
+            WBName = "Ensamble (A2plus)"
+        if WBName == "Surface":
+            WBName = "Superficie"
+        if WBName == "Sheet Metal":
+            WBName = "Hoja de metal"
+        if WBName == "Gear":
+            WBName = "Engranaje"
+    if currentLanguage == "French":
+        if WBName == "Sketcher":
+            WBName = "Esquisse"
+        if WBName == "Part Design":
+            WBName = "Fonctions"
+        if WBName == "TechDraw":
+            WBName = "Mise en plan"
+        if WBName == "Spreadsheet":
+            WBName = "Tableur de feuille de calcul"
+        if WBName == "A2plus":
+            WBName = "Assemblage (A2plus)"
+        if WBName == "Surface":
+            WBName = "Surface"
+        if WBName == "Sheet Metal":
+            WBName = "Tôlerie"
+        if WBName == "Gear":
+            WBName = "Engrenage"
+    if currentLanguage == "German":
+        if WBName == "Sketcher":
+            WBName = "Skizze"
+        if WBName == "Part Design":
+            WBName = "Features"
+        if WBName == "TechDraw":
+            WBName = "Zeichnung"
+        if WBName == "Spreadsheet":
+            WBName = "Kalkulationstabelle"
+        if WBName == "A2plus":
+            WBName = "Baugruppe (A2plus)"
+        if WBName == "Surface":
+            WBName = "Surface"
+        if WBName == "Sheet Metal":
+            WBName = "Blech"
+        if WBName == "Gear":
+            WBName = "Zahnrad"
+    #print(WBName)
     return WBName
 
 
