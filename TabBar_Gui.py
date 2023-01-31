@@ -20,6 +20,7 @@
 
 
 import os
+import locale
 import FreeCADGui as Gui
 import FreeCAD as App
 from PySide import QtGui
@@ -146,6 +147,76 @@ def translateWBName(WBName):
     pg = App.ParamGet("User parameter:BaseApp/Preferences/General")
     currentLanguage = pg.GetString("Language","unknown")
     #print(currentLanguage)
+    if currentLanguage == "unknown":
+        loc = locale.getlocale()[0]
+        if loc == "pt_BR":
+            currentLanguage == "Portuguese, Brazilian"
+        if loc == "pt_PT":
+            currentLanguage == "Portuguese"
+        if loc == "de_DE":
+            currentLanguage == "German"
+        if loc == "de_CH":
+            currentLanguage == "German"
+        if loc == "de_BE":
+            currentLanguage == "German"
+        if loc == "de_AT":
+            currentLanguage == "German"
+        if loc == "de_LU":
+            currentLanguage == "German"
+        if loc == "de_IT":
+            currentLanguage == "German"
+        if loc == "de_LI":
+            currentLanguage == "German"
+        if loc == "fr_FR":
+            currentLanguage == "French"
+        if loc == "fr_BE":
+            currentLanguage == "French"
+        if loc == "fr_CA":
+            currentLanguage == "French"
+        if loc == "fr_CH":
+            currentLanguage == "French"
+        if loc == "es_AR":
+            currentLanguage == "Spanish, Argentina"
+        if loc == "es_BO":
+            currentLanguage == "Spanish, Argentina"
+        if loc == "es_CL":
+            currentLanguage == "Spanish, Argentina"
+        if loc == "es_CO":
+            currentLanguage == "Spanish, Argentina"
+        if loc == "es_CR":
+            currentLanguage == "Spanish, Argentina"
+        if loc == "es_CU":
+            currentLanguage == "Spanish, Argentina"
+        if loc == "es_ES":
+            currentLanguage == "Spanish"
+        if loc == "es_DO":
+            currentLanguage == "Spanish"
+        if loc == "es_EC":
+            currentLanguage == "Spanish"
+        if loc == "es_GT":
+            currentLanguage == "Spanish"
+        if loc == "es_HN":
+            currentLanguage == "Spanish"
+        if loc == "es_MX":
+            currentLanguage == "Spanish"
+        if loc == "es_NI":
+            currentLanguage == "Spanish"
+        if loc == "es_PA":
+            currentLanguage == "Spanish"
+        if loc == "es_PE":
+            currentLanguage == "Spanish"
+        if loc == "es_PR":
+            currentLanguage == "Spanish"
+        if loc == "es_PY":
+            currentLanguage == "Spanish"
+        if loc == "es_SV":
+            currentLanguage == "Spanish"
+        if loc == "es_US":
+            currentLanguage == "Spanish"
+        if loc == "es_UY":
+            currentLanguage == "Spanish"
+        if loc == "es_VE":
+            currentLanguage == "Spanish"
     if currentLanguage == "Portuguese, Brazilian" or currentLanguage == "Portuguese":
         if WBName == "Sketcher":
             WBName = "Esboço"
