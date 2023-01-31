@@ -148,7 +148,6 @@ def translateWBName(WBName):
     currentLanguage = pg.GetString("Language","unknown")
     if currentLanguage == "unknown":
         loc = locale.getlocale()[0]
-        print(loc)
         if loc == "pt_BR":
             currentLanguage = "Portuguese, Brazilian"
         if loc == "pt_PT":
