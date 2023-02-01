@@ -146,8 +146,11 @@ def onOrientationChanged(w):
 def translateWBName(WBName):
     pg = App.ParamGet("User parameter:BaseApp/Preferences/General")
     currentLanguage = pg.GetString("Language","unknown")
+    print(currentLanguage)
     if currentLanguage == "unknown":
         loc = locale.getlocale()[0]
+        if loc == "en_US":
+            currentLanguage = "English"
         if loc == "pt_BR":
             currentLanguage = "Portuguese, Brazilian"
         if loc == "pt_PT":
@@ -216,6 +219,11 @@ def translateWBName(WBName):
             currentLanguage = "Spanish"
         if loc == "es_VE":
             currentLanguage = "Spanish"
+    if currentLanguage == "English":
+        if WBName == "MOOC":
+            WBName = "Tutorial (MOOC)"
+        if WBName == "A2plus":
+            WBName = "Assembly (A2plus)"
     if currentLanguage == "Portuguese, Brazilian" or currentLanguage == "Portuguese":
         if WBName == "MOOC":
             WBName = "Tutorial (MOOC)"
