@@ -217,6 +217,8 @@ def translateWBName(WBName):
         if loc == "es_VE":
             currentLanguage = "Spanish"
     if currentLanguage == "Portuguese, Brazilian" or currentLanguage == "Portuguese":
+        if WBName == "MOOC":
+            WBName = "Tutorial (MOOC)"
         if WBName == "Sketcher":
             WBName = "Esboço"
         if WBName == "Part Design":
@@ -234,6 +236,8 @@ def translateWBName(WBName):
         if WBName == "Gear":
             WBName = "Engrenagens"
     if currentLanguage == "Spanish, Argentina" or currentLanguage == "Spanish":
+        if WBName == "MOOC":
+            WBName = "Tutorial (MOOC)"
         if WBName == "Sketcher":
             WBName = "Croquis"
         if WBName == "Part Design":
@@ -251,6 +255,8 @@ def translateWBName(WBName):
         if WBName == "Gear":
             WBName = "Engranaje"
     if currentLanguage == "French":
+        if WBName == "MOOC":
+            WBName = "Didacticiel (MOOC)"
         if WBName == "Sketcher":
             WBName = "Esquisse"
         if WBName == "Part Design":
@@ -268,6 +274,8 @@ def translateWBName(WBName):
         if WBName == "Gear":
             WBName = "Engrenage"
     if currentLanguage == "German":
+        if WBName == "MOOC":
+            WBName = "Lernprogramm (MOOC)"
         if WBName == "Sketcher":
             WBName = "Skizze"
         if WBName == "Part Design":
