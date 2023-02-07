@@ -146,7 +146,6 @@ def onOrientationChanged(w):
 def translateWBName(WBName):
     pg = App.ParamGet("User parameter:BaseApp/Preferences/General")
     currentLanguage = pg.GetString("Language","unknown")
-    print(currentLanguage)
     if currentLanguage == "unknown":
         loc = locale.getlocale()[0]
         if loc == "en_US":
