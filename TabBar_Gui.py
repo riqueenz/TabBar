@@ -242,6 +242,8 @@ def translateWBName(WBName):
             WBName = "Chapas metálicas"
         if WBName == "Gear":
             WBName = "Engrenagens"
+        if WBName == "Assembly":
+            WBName = "Montagem"
     if currentLanguage == "Spanish, Argentina" or currentLanguage == "Spanish":
         if WBName == "MOOC":
             WBName = "Tutorial (MOOC)"
@@ -261,6 +263,8 @@ def translateWBName(WBName):
             WBName = "Hoja de metal"
         if WBName == "Gear":
             WBName = "Engranaje"
+        if WBName == "Assembly":
+            WBName = "Ensamble"
     if currentLanguage == "French":
         if WBName == "MOOC":
             WBName = "Didacticiel (MOOC)"
@@ -280,6 +284,8 @@ def translateWBName(WBName):
             WBName = "Tôlerie"
         if WBName == "Gear":
             WBName = "Engrenage"
+        if WBName == "Assembly":
+            WBName = "Assemblage"
     if currentLanguage == "German":
         if WBName == "MOOC":
             WBName = "Lernprogramm (MOOC)"
@@ -299,6 +305,8 @@ def translateWBName(WBName):
             WBName = "Blech"
         if WBName == "Gear":
             WBName = "Zahnrad"
+        if WBName == "Assembly":
+            WBName = "Baugruppe"
     #print(WBName)
     return WBName
 
